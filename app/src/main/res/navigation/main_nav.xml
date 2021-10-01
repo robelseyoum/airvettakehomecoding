@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav"
+    app:startDestination="@+id/randomUserFragment">
+
+    <fragment
+        android:id="@+id/randomUserFragment"
+        android:name="com.robelseyoum.airvettakehomecoding.ui.randomuseroverview.RandomUserFragment"
+        android:label="RandomUserFragment"
+        tools:layout="@layout/fragment_random_user" >
+        <action
+            android:id="@+id/action_showDetail"
+            app:destination="@id/randomUserDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/randomUserDetailFragment"
+        android:name="com.robelseyoum.airvettakehomecoding.ui.randomuseroverview.RandomUserFragment"
+        android:label="RandomUserFragment"
+        tools:layout="@layout/fragment_random_user_detail" >
+        <argument
+            android:name="selectedRandomUser"
+            app:argType="com.robelseyoum.airvettakehomecoding.data.model.Results"
+            />
+    </fragment>
+</navigation>
