@@ -17,7 +17,8 @@ suspend fun <T> safeApi(
         try {
 //            throws TimeoutCancellationException
             ApiResult.Success(apiCall.invoke()) //if it is success then it will pass the return type of the suspend function T (type of T) this -(apiCall: suspend () -> T? )
-        } catch (throwable: Throwable) {
+        }
+        catch (throwable: Throwable) {
 
             throwable.printStackTrace()
 

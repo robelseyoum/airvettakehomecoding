@@ -1,11 +1,13 @@
 package com.robelseyoum.airvettakehomecoding.ui.randomuseroverview
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import com.robelseyoum.airvettakehomecoding.databinding.FragmentRandomUserBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -28,7 +30,14 @@ class RandomUserFragment : Fragment() {
         return binding.root
     }
 
-    private fun initSubscriptions() {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initSubscriptions()
+    }
 
+    private fun initSubscriptions() {
+        viewModel.randomUserApiData.observe(viewLifecycleOwner, Observer {
+            Log.v(TAG, "${viewModel.randomUserApiData.value}")
+        })
     }
 }

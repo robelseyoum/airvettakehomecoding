@@ -18,11 +18,6 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object  NetworkModule {
 
-    @Singleton
-    @Provides
-    fun provideRandomUserService(retrofit: Retrofit.Builder): RandomUserService =
-        retrofit.build().create(RandomUserService::class.java)
-
     @Provides
     @Singleton
     fun provideLoggingInterceptor(): HttpLoggingInterceptor {
@@ -39,18 +34,27 @@ object  NetworkModule {
 
 //    @Singleton
 //    @Provides
-//    fun provideGsonBuilder(): Gson =
-//        GsonBuilder()
-//            .registerTypeAdapter(RandomUserService::class.java, ListDeserializer())
-//            .create()
+//    fun provideGsonBuilder(): Gson = GsonBuilder().excludeFieldsWithoutExposeAnnotation().create()
 
     @Singleton
     @Provides
-    fun provideRetrofitBuilder(httpClient: OkHttpClient, gson: Gson): Retrofit.Builder {
+    fun provideConverterFactory(): GsonConverterFactory{
+        return GsonConverterFactory.create()
+    }
+
+    @Singleton
+    @Provides
+    fun provideRetrofitBuilder(httpClient: OkHttpClient, gsonConverterFactory: GsonConverterFactory): Retrofit {
         return Retrofit.Builder()
             .baseUrl(BASE_URL_RANDOM_USER)
-            .addConverterFactory(GsonConverterFactory.create(gson))
             .client(httpClient)
+            .addConverterFactory(gsonConverterFactory)
+            .build()
     }
+
+    @Singleton
+    @Provides
+    fun provideRandomUserService(retrofit: Retrofit): RandomUserService =
+        retrofit.create(RandomUserService::class.java)
 
 }

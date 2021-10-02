@@ -3,9 +3,11 @@ package com.robelseyoum.airvettakehomecoding.data.model
 import com.google.gson.annotations.SerializedName
 
 data class Info (
-
-	@SerializedName("seed") val seed : String,
-	@SerializedName("results") val results : Int,
-	@SerializedName("page") val page : Int,
-	@SerializedName("version") val version : Double
+	@SerializedName("street") var street : Street,
+	@SerializedName("city") var city : String,
+	@SerializedName("state") var state : String,
+	@SerializedName("country") var country : String,
+	@SerializedName("postcode") var postcode : Int,
+	@SerializedName("coordinates") var coordinates : Coordinates,
+	@SerializedName("timezone") var timezone : Timezone
 )

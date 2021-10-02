@@ -1,9 +1,12 @@
 package com.robelseyoum.airvettakehomecoding.data.api
 
-import com.robelseyoum.airvettakehomecoding.data.model.RandomUserBase
+import com.robelseyoum.airvettakehomecoding.data.model.RandomUser
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface RandomUserService {
-    @GET("?results=10")
-    suspend fun getRandomUser(): RandomUserBase
+    @GET("api/")
+    suspend fun getRandomUser(
+        @Query("results") results: Int = 1
+    ): RandomUser
 }

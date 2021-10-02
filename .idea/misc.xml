@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.346875" />
+        <entry key="app/src/main/res/layout/activity_random_user.xml" value="0.16875" />
         <entry key="app/src/main/res/layout/activity_randomuser.xml" value="0.234375" />
         <entry key="app/src/main/res/layout/fragment_random_user.xml" value="0.359375" />
         <entry key="app/src/main/res/layout/fragment_random_user_detail.xml" value="0.359375" />
