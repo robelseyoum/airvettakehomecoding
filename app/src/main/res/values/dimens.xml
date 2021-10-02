@@ -5,6 +5,7 @@
     <dimen name="margin_button">5dp</dimen>
     <dimen name="padding_eight_dp">8dp</dimen>
     <dimen name="padding_default_dp">16dp</dimen>
+    <dimen name="app_bar_layout_height">400dp</dimen>
     <dimen name="placeholder_title_height_dp">20dp</dimen>
     <dimen name="padding_three_halves_dp">24dp</dimen>
     <dimen name="padding_double_three_halves_dp">46dp</dimen>

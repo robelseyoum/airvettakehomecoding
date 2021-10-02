@@ -2,17 +2,18 @@ package com.robelseyoum.airvettakehomecoding.ui.randomuseroverview
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.robelseyoum.airvettakehomecoding.databinding.ActivityRandomUserBinding
+import com.robelseyoum.airvettakehomecoding.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class RandomUserActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityRandomUserBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityRandomUserBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
     }
 }

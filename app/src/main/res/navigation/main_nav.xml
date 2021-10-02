@@ -16,8 +16,8 @@
     </fragment>
     <fragment
         android:id="@+id/randomUserDetailFragment"
-        android:name="com.robelseyoum.airvettakehomecoding.ui.randomuseroverview.RandomUserFragment"
-        android:label="RandomUserFragment"
+        android:name="com.robelseyoum.airvettakehomecoding.ui.randomuserdetail.DetailRandomUserFragment"
+        android:label="DetailRandomUserFragment"
         tools:layout="@layout/fragment_random_user_detail" >
         <argument
             android:name="selectedRandomUser"

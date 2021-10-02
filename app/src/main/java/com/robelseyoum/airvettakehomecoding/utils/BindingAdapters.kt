@@ -78,3 +78,30 @@ fun bindErrorStatus(layout: LinearLayout, status: RandomUserApiStatus?) {
         }
     }
 }
+
+/**
+ * Detail Status zone start
+ * */
+
+
+@BindingAdapter("detailGenderString")
+fun TextView.setDetailGenderString(item: Results?) {
+    item?.let { text = it.gender }
+}
+
+@BindingAdapter("detailCityString")
+fun TextView.setDetailCityString(item: Results?) {
+    item?.let { text = it.location.city}
+}
+
+@BindingAdapter("detailStateString")
+fun TextView.setDetailStateString(item: Results?) {
+    item?.let { text = it.location.state}
+}
+
+@BindingAdapter("detailCountryString")
+fun TextView.setDetailCountryString(item: Results?) {
+    item?.let { text = it.location.country}
+}
+
+/** end zone */

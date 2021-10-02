@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Airvettakehomecoding">
 
         <activity
-            android:name="com.robelseyoum.airvettakehomecoding.ui.randomuseroverview.RandomUserActivity"
+            android:name="com.robelseyoum.airvettakehomecoding.ui.randomuseroverview.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

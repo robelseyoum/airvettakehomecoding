@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.robelseyoum.airvettakehomecoding.R
 import com.robelseyoum.airvettakehomecoding.databinding.FragmentRandomUserBinding
 import com.robelseyoum.airvettakehomecoding.utils.setDivider
@@ -19,7 +20,6 @@ class RandomUserFragment : Fragment() {
     private val TAG: String = "AppDebug"
     private lateinit var binding: FragmentRandomUserBinding
     private val viewModel: RandomUserViewModel by viewModels()
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,8 +40,21 @@ class RandomUserFragment : Fragment() {
 
     private fun initSubscriptions() {
         binding.randomList.adapter = RandomUserAdapter(RandomUserAdapter.OnClickListener {
-            //To Do click listner
+                viewModel.displayRandomUserDetails(it)
         })
+
+
+        viewModel.navigateToSelectedRandomUser.observe(viewLifecycleOwner, Observer {
+            if(it != null){
+                this.findNavController().navigate(RandomUserFragmentDirections.actionShowDetail(it))
+                viewModel.displayStatusDetailsComplete()
+            }
+        })
+
+        binding.btnRetry.setOnClickListener {
+            viewModel.fetchRandomUser()
+            binding.errorMessageContainer.visibility = View.GONE
+        }
 
         viewModel.randomUserApiData.observe(viewLifecycleOwner, Observer {
             Log.v(TAG, "${viewModel.randomUserApiData.value}")
