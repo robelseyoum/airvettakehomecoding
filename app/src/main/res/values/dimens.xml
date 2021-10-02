@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="padding_four_dp">4dp</dimen>
+    <dimen name="margin_button">5dp</dimen>
+    <dimen name="padding_eight_dp">8dp</dimen>
+    <dimen name="padding_default_dp">16dp</dimen>
+    <dimen name="placeholder_title_height_dp">20dp</dimen>
+    <dimen name="padding_three_halves_dp">24dp</dimen>
+    <dimen name="padding_double_three_halves_dp">46dp</dimen>
+    <dimen name="card_view_height">180dp</dimen>
+    <dimen name="pic_card_width">180dp</dimen>
+    <dimen name="card_title_width">70dp</dimen>
+
+
+
+    <dimen name="padding_halves_sp">16sp</dimen>
+    <dimen name="padding_three_halves_sp">20sp</dimen>
+    <dimen name="box_text_size">24sp</dimen>
+</resources>

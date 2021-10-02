@@ -5,3 +5,5 @@ sealed class ApiResult <out T> {
     data class GenericError(val code: Int? = null, val errorMessages: String? = null): ApiResult<Nothing>()
     object NetworkError : ApiResult<Nothing>()
 }
+
+enum class RandomUserApiStatus { LOADING, ERROR, DONE }

@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+        <variable
+            name="randomUseList"
+            type="com.robelseyoum.airvettakehomecoding.data.model.Results" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/card_view_height"
+        android:layout_margin="12dp"
+        android:background="@android:color/darker_gray"
+        android:clickable="true"
+        android:elevation="2dp"
+        android:focusable="true"
+        android:orientation="vertical"
+        app:cardCornerRadius="10dp">
+
+        <ImageView
+            android:id="@+id/user_image_id"
+            android:layout_width="@dimen/pic_card_width"
+            android:layout_height="@dimen/pic_card_width"
+            android:layout_gravity="top|start"
+            android:contentDescription="@string/picture"
+            android:scaleType="fitStart"
+            app:imageUrl="@{randomUseList}"
+            android:transitionName="@string/transition_name"
+            tools:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/user_name_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:layout_marginStart="@dimen/pic_card_width"
+            android:layout_marginTop="@dimen/card_title_width"
+            android:maxHeight="@dimen/card_title_width"
+            android:padding="4dp"
+            app:randomNameString="@{randomUseList}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            tools:text="@string/random_user_name" />
+
+    </androidx.cardview.widget.CardView>
+</layout>

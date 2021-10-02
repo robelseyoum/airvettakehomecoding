@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Airvet Take Home Coding</string>
+
+    <string name="error_message">Oh dear we are unable to fetch random user for you. Maybe your not connected with internet!</string>
+    <string name="class_status">Status -</string>
+    <string name="response_code">Response Code -</string>
+    <string name="response_time">Response Time -</string>
+    <string name="retry">Retry</string>
+    <string name="status_name">Status Name -</string>
+    <string name="url">Url -</string>
+    <string name="transition_name">Random User Card</string>
+    <string name="random_user_name">Ms Emmi Anttila</string>
+    <string name="picture">Picture</string>
+    <string name="random_user_detail_header">Detail Info about Random User </string>
+
 </resources>
+

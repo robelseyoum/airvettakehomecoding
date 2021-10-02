@@ -10,8 +10,6 @@ fun formatDurations(seconds: Long): String = if (seconds < 60) {
     seconds.toString()
 } else { DateUtils.formatElapsedTime(seconds) }
 
-enum class RandomUserApiStatus { LOADING, ERROR, DONE }
-
 fun RecyclerView.setDivider(@DrawableRes drawableRes: Int) {
     val divider = DividerItemDecoration(
         this.context,

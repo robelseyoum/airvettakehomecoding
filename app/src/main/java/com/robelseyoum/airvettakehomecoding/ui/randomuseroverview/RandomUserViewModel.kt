@@ -6,11 +6,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.robelseyoum.airvettakehomecoding.concurrency.AppDispatchers
 import com.robelseyoum.airvettakehomecoding.data.api.ApiResult.*
-import com.robelseyoum.airvettakehomecoding.data.model.RandomUser
+import com.robelseyoum.airvettakehomecoding.data.api.RandomUserApiStatus
+import com.robelseyoum.airvettakehomecoding.data.api.RandomUserApiStatus.*
 import com.robelseyoum.airvettakehomecoding.data.model.Results
 import com.robelseyoum.airvettakehomecoding.data.repository.RandomUserRepositoryImp
-import com.robelseyoum.airvettakehomecoding.utils.RandomUserApiStatus
-import com.robelseyoum.airvettakehomecoding.utils.RandomUserApiStatus.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -51,5 +50,13 @@ class RandomUserViewModel @Inject constructor(
                 _randomUserStatus.value = DONE
             }
         }
+    }
+
+    fun displayRandomUserDetails(results: Results?) {
+        results?.let { _navigateToSelectedRandomUser.value = results }
+    }
+
+    fun displayStatusDetailsComplete() {
+        _navigateToSelectedRandomUser.value = null
     }
 }

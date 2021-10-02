@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import com.robelseyoum.airvettakehomecoding.R
 import com.robelseyoum.airvettakehomecoding.databinding.FragmentRandomUserBinding
+import com.robelseyoum.airvettakehomecoding.utils.setDivider
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -27,6 +29,7 @@ class RandomUserFragment : Fragment() {
         binding = FragmentRandomUserBinding.inflate(inflater)
         binding.lifecycleOwner = this
         binding.randomUserViewModel = viewModel
+        binding.randomList.setDivider(R.drawable.recycler_view_divider)
         return binding.root
     }
 
@@ -36,6 +39,10 @@ class RandomUserFragment : Fragment() {
     }
 
     private fun initSubscriptions() {
+        binding.randomList.adapter = RandomUserAdapter(RandomUserAdapter.OnClickListener {
+            //To Do click listner
+        })
+
         viewModel.randomUserApiData.observe(viewLifecycleOwner, Observer {
             Log.v(TAG, "${viewModel.randomUserApiData.value}")
         })
