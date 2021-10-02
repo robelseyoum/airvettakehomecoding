@@ -8,6 +8,4 @@ data class Info (
 	@SerializedName("state") var state : String,
 	@SerializedName("country") var country : String,
 	@SerializedName("postcode") var postcode : Int,
-	@SerializedName("coordinates") var coordinates : Coordinates,
-	@SerializedName("timezone") var timezone : Timezone
 )

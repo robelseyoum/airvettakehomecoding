@@ -1,14 +1,10 @@
 package com.robelseyoum.airvettakehomecoding.utils
 
-import android.text.format.DateUtils
 import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 
-fun formatDurations(seconds: Long): String = if (seconds < 60) {
-    seconds.toString()
-} else { DateUtils.formatElapsedTime(seconds) }
 
 fun RecyclerView.setDivider(@DrawableRes drawableRes: Int) {
     val divider = DividerItemDecoration(

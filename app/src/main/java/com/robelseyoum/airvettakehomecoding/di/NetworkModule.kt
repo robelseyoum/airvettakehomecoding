@@ -32,9 +32,6 @@ object  NetworkModule {
             .addInterceptor(loggingInterceptor).build()
     }
 
-//    @Singleton
-//    @Provides
-//    fun provideGsonBuilder(): Gson = GsonBuilder().excludeFieldsWithoutExposeAnnotation().create()
 
     @Singleton
     @Provides

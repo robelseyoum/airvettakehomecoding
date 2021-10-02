@@ -5,7 +5,6 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.TextView
-import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -15,7 +14,6 @@ import com.robelseyoum.airvettakehomecoding.data.api.RandomUserApiStatus
 import com.robelseyoum.airvettakehomecoding.data.api.RandomUserApiStatus.*
 import com.robelseyoum.airvettakehomecoding.data.model.Results
 import com.robelseyoum.airvettakehomecoding.ui.randomuseroverview.RandomUserAdapter
-import okhttp3.internal.notify
 
 
 @BindingAdapter("listData")
@@ -23,7 +21,6 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<Results>?) {
     val adapter = recyclerView.adapter as RandomUserAdapter
     data?.let { adapter.submitList(it) }
 }
-
 
 @BindingAdapter("randomNameString")
 fun TextView.setStatusNameString(item: Results?) {
@@ -79,10 +76,7 @@ fun bindErrorStatus(layout: LinearLayout, status: RandomUserApiStatus?) {
     }
 }
 
-/**
- * Detail Status zone start
- * */
-
+/** Detail User  zone start */
 
 @BindingAdapter("detailGenderString")
 fun TextView.setDetailGenderString(item: Results?) {
@@ -104,4 +98,4 @@ fun TextView.setDetailCountryString(item: Results?) {
     item?.let { text = it.location.country}
 }
 
-/** end zone */
+/**  end Detail User  zone */
