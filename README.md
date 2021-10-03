@@ -10,3 +10,4 @@ What tech stack used to solve the coding challenge are:-
 HOW TO USE THE APP
 - At a launch of the App, it will displays the list of random user lists 
 - When we click one of the pic, it will take us to a new screen with the details of the selected user info 
+
