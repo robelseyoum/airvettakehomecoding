@@ -12,6 +12,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.robelseyoum.airvettakehomecoding.R
 import com.robelseyoum.airvettakehomecoding.data.api.RandomUserApiStatus
 import com.robelseyoum.airvettakehomecoding.data.api.RandomUserApiStatus.*
+import com.robelseyoum.airvettakehomecoding.data.model.Person
 import com.robelseyoum.airvettakehomecoding.data.model.Results
 import com.robelseyoum.airvettakehomecoding.ui.randomuseroverview.RandomUserAdapter
 
@@ -24,11 +25,10 @@ fun bindRecyclerView(recyclerView: RecyclerView, data: List<Results>?) {
 
 @BindingAdapter("randomNameString")
 fun TextView.setStatusNameString(item: Results?) {
-    val title = item?.name?.title
-    val firstName = item?.name?.first
-    val lastName = item?.name?.last
-    val fullName = "$title $firstName $lastName"
-    text = fullName
+    item?.let {
+      val person = Person(it.name.title, it.name.first, it.name.last)
+        text = "${person.title+" "+person.firstName+" "+person.lastName}"
+    }
 }
 
 @BindingAdapter("imageUrl")

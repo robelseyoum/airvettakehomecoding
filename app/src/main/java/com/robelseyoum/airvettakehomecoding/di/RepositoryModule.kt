@@ -27,5 +27,4 @@ object RepositoryModule {
         statusService: RandomUserService,
         appDispatchers: AppDispatchers
     ) : RandomUserRepositoryImp = RandomUserRepository(statusService, appDispatchers)
-
 }

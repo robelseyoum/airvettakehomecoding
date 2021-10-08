@@ -32,7 +32,6 @@ object  NetworkModule {
             .addInterceptor(loggingInterceptor).build()
     }
 
-
     @Singleton
     @Provides
     fun provideConverterFactory(): GsonConverterFactory{
