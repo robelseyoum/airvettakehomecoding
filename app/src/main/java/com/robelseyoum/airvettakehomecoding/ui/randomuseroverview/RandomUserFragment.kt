@@ -55,9 +55,5 @@ class RandomUserFragment : Fragment() {
             viewModel.fetchRandomUser()
             binding.errorMessageContainer.visibility = View.GONE
         }
-
-        viewModel.randomUserApiData.observe(viewLifecycleOwner, Observer {
-            Log.v(TAG, "${viewModel.randomUserApiData.value}")
-        })
     }
 }
